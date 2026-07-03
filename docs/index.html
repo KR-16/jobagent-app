@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Job Agent — your personal LinkedIn job-hunting agent</title>
+<meta name="description" content="Job Agent scrapes LinkedIn hiring posts, ranks the leads with AI, keeps everything in a spreadsheet in your own Google Drive, and emails you the ones you can actually apply to.">
+<style>
+  :root { --blue:#0077b5; --blue2:#00a0dc; --ink:#1a1a2e; --mut:#5b6570; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:'Segoe UI', system-ui, -apple-system, sans-serif; color:var(--ink);
+         background:#f6f8fa; line-height:1.55; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 20px; }
+
+  header { background:linear-gradient(135deg,var(--blue),var(--blue2)); color:#fff;
+           text-align:center; padding:72px 20px 64px; }
+  header h1 { font-size:44px; letter-spacing:-.5px; }
+  header .tag { font-size:19px; max-width:640px; margin:14px auto 30px; opacity:.95; }
+  .btn { display:inline-block; background:#fff; color:var(--blue); font-weight:600;
+         font-size:18px; padding:14px 30px; border-radius:10px; text-decoration:none;
+         box-shadow:0 4px 14px rgba(0,0,0,.18); transition:transform .12s; }
+  .btn:hover { transform:translateY(-2px); }
+  .meta { margin-top:14px; font-size:13.5px; opacity:.9; }
+  .meta a { color:#fff; }
+
+  section { padding:52px 0; }
+  h2 { font-size:26px; text-align:center; margin-bottom:28px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; }
+  .card { background:#fff; border:1px solid #e6e9ec; border-radius:12px; padding:20px 22px; }
+  .card b { display:block; font-size:15.5px; margin-bottom:6px; }
+  .card p { font-size:14px; color:var(--mut); }
+  .emoji { font-size:22px; display:block; margin-bottom:8px; }
+
+  .steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; }
+  .step { background:#fff; border:1px solid #e6e9ec; border-radius:12px; padding:22px; }
+  .n { display:inline-flex; width:30px; height:30px; border-radius:50%; background:var(--blue);
+       color:#fff; align-items:center; justify-content:center; font-weight:700; margin-bottom:10px; }
+  .step p { font-size:14px; color:var(--mut); }
+  .step b { font-size:15.5px; }
+
+  .privacy { background:#eef6ee; border:1px solid #d6e8d6; border-radius:12px;
+             padding:22px 26px; font-size:15px; color:#2c4a2c; }
+
+  details { background:#fff; border:1px solid #e6e9ec; border-radius:10px;
+            padding:14px 18px; margin-bottom:10px; }
+  summary { cursor:pointer; font-weight:600; font-size:15px; }
+  details p { margin-top:10px; font-size:14px; color:var(--mut); }
+
+  #notes { background:#fff; border:1px solid #e6e9ec; border-radius:12px; padding:22px 26px; }
+  #notes h4 { margin:12px 0 6px; font-size:15px; }
+  #notes ul { margin:6px 0 6px 20px; }
+  #notes li, #notes p { font-size:14px; color:var(--mut); margin-bottom:4px; }
+  .whatsnew-head { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px; }
+  .whatsnew-head h2 { margin:0; text-align:left; }
+  .whatsnew-head a { font-size:14px; }
+
+  footer { text-align:center; padding:36px 20px 48px; font-size:13.5px; color:var(--mut); }
+  a { color:var(--blue); }
+  .req { text-align:center; font-size:14px; color:var(--mut); margin-top:18px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>🤖 Job Agent</h1>
+    <p class="tag">Your personal LinkedIn job-hunting agent — it scrapes fresh hiring posts,
+    ranks the leads with AI, keeps everything in <b>your own Google Drive</b>, and emails you
+    the ones you can actually apply to.</p>
+    <a class="btn" href="https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe">
+      ⬇&nbsp; Download for Windows</a>
+    <div class="meta">
+      <span id="ver">latest</span> · <span id="reldate"></span> ·
+      <span id="dls">–</span> downloads · free ·
+      <a href="https://github.com/KR-16/jobagent-app/releases">release notes</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Up and running in three steps</h2>
+    <div class="steps">
+      <div class="step"><span class="n">1</span>
+        <b>Download &amp; run</b>
+        <p>One .exe, no installs, no Python. SmartScreen will warn because the app is
+        unsigned — click <i>More info → Run anyway</i>.</p></div>
+      <div class="step"><span class="n">2</span>
+        <b>Answer the wizard</b>
+        <p>Your target roles, seniority, location, a free Gemini key, and your email.
+        One Google click creates your personal job spreadsheet in <i>your</i> Drive.</p></div>
+      <div class="step"><span class="n">3</span>
+        <b>Log in &amp; autopilot</b>
+        <p>Sign in to LinkedIn once, hit Autopilot, and leads start filling your sheet —
+        with the best ones landing in your inbox.</p></div>
+    </div>
+    <p class="req">Needs: Windows 10/11 · Google Chrome · a LinkedIn account ·
+      a Google account · a free <a href="https://aistudio.google.com/apikey">Gemini API key</a></p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>What it does for you</h2>
+    <div class="cards">
+      <div class="card"><span class="emoji">🔍</span><b>Scrapes hiring posts</b>
+        <p>Searches LinkedIn for your roles with human-like pacing — scroll pauses, random
+        gaps, a daily cap — so it browses the way you would.</p></div>
+      <div class="card"><span class="emoji">🤖</span><b>AI-ranked leads</b>
+        <p>Google Gemini extracts role, seniority, location, skills, and how to apply from
+        every post, then the best matches rise to the top.</p></div>
+      <div class="card"><span class="emoji">📬</span><b>Finds the apply route</b>
+        <p>Application emails and links are pulled out of the post text, so Tier&nbsp;1 leads
+        are one click from an application.</p></div>
+      <div class="card"><span class="emoji">📊</span><b>Live dashboard</b>
+        <p>Your sheet gets a Dashboard tab with charts — new leads per day, leads by role —
+        plus an Activity log of everything the agent did.</p></div>
+      <div class="card"><span class="emoji">📧</span><b>Email digests</b>
+        <p>New actionable leads arrive in your inbox as a clean digest. Nothing is ever
+        sent twice.</p></div>
+      <div class="card"><span class="emoji">⚙️</span><b>Easy to tweak</b>
+        <p>A local settings page in your browser edits roles, seniority, email, and keys —
+        no config files, no restarts.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="privacy">🔒 <b>Your data stays yours.</b> The spreadsheet lives in your
+    Google Drive (the app can only touch files it created — the only permission it asks for).
+    Your LinkedIn session, caches, and profile stay on your machine. Emails are sent from
+    your own Gmail. Nothing is uploaded anywhere else, ever.</div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="whatsnew-head">
+      <h2>What's new</h2>
+      <a href="https://github.com/KR-16/jobagent-app/releases">all releases →</a>
+    </div>
+    <div id="notes"><p>Loading the latest release notes…</p></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <h2>Questions</h2>
+    <details><summary>Windows says "Windows protected your PC"</summary>
+      <p>That's SmartScreen flagging an unsigned app (code-signing certificates cost money —
+      this is a free tool). Click <b>More info → Run anyway</b>. Every release is built and
+      packaged automatically by GitHub Actions.</p></details>
+    <details><summary>Is it free?</summary>
+      <p>Yes — the app, the Gemini free tier, and Google Sheets all cost nothing for normal
+      daily use. If a day's AI quota runs out mid-batch, the agent backs off and finishes on
+      a later cycle automatically.</p></details>
+    <details><summary>Is scraping safe for my LinkedIn account?</summary>
+      <p>The agent mimics a human: randomized pauses, gaps between searches, a daily search
+      cap, and a ~3-hour cycle. Still, it automates <i>your</i> account and LinkedIn's terms
+      don't love automation — keep the default pacing and use your own judgment.</p></details>
+    <details><summary>How do I update?</summary>
+      <p>The download button above always serves the newest version. Your profile, sheet,
+      and sessions are files next to the .exe — replacing the .exe keeps everything.</p></details>
+  </div>
+</section>
+
+<footer>
+  Built by <a href="https://github.com/KR-16">KR-16</a> ·
+  <a href="https://github.com/KR-16/jobagent-app/issues">Report a problem</a>
+</footer>
+
+<script>
+// Fill version, date, download count, and release notes from the latest GitHub release.
+// The page works fine statically if the API is unreachable.
+(function () {
+  var esc = function (s) { return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); };
+  fetch("https://api.github.com/repos/KR-16/jobagent-app/releases/latest")
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (rel) {
+      if (!rel) return;
+      document.getElementById("ver").textContent = rel.tag_name;
+      document.getElementById("reldate").textContent =
+        new Date(rel.published_at).toLocaleDateString(undefined,
+          { year: "numeric", month: "long", day: "numeric" });
+      var dls = (rel.assets || []).reduce(function (s, a) { return s + (a.download_count || 0); }, 0);
+      document.getElementById("dls").textContent = dls.toLocaleString();
+
+      // Minimal markdown → HTML for the release body (headings + bullets + text).
+      var out = ["<h4>" + esc(rel.name || rel.tag_name) + "</h4>"], list = false;
+      (rel.body || "").split("\n").slice(0, 40).forEach(function (line) {
+        line = line.trim();
+        var m = line.match(/^#{2,4}\s+(.*)/), b = line.match(/^[-*]\s+(.*)/);
+        if (b) { if (!list) { out.push("<ul>"); list = true; } out.push("<li>" + esc(b[1]) + "</li>"); return; }
+        if (list) { out.push("</ul>"); list = false; }
+        if (m) out.push("<h4>" + esc(m[1]) + "</h4>");
+        else if (line) out.push("<p>" + esc(line) + "</p>");
+      });
+      if (list) out.push("</ul>");
+      document.getElementById("notes").innerHTML = out.join("");
+    })
+    .catch(function () {});
+})();
+</script>
+</body>
+</html>
