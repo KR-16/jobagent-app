@@ -67,8 +67,9 @@
     <p class="tag">Your personal LinkedIn job-hunting agent — it scrapes fresh hiring posts,
     ranks the leads with AI, keeps everything in <b>your own Google Drive</b>, and emails you
     the ones you can actually apply to.</p>
-    <a class="btn" href="https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe">
+    <a class="btn" id="mainbtn" href="https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe">
       ⬇&nbsp; Download for Windows</a>
+    <div class="meta" id="alts"></div>
     <div class="meta">
       <span id="ver">latest</span> · <span id="reldate"></span> ·
       <span id="dls">–</span> downloads · free ·
@@ -83,8 +84,8 @@
     <div class="steps">
       <div class="step"><span class="n">1</span>
         <b>Download &amp; run</b>
-        <p>One .exe, no installs, no Python. SmartScreen will warn because the app is
-        unsigned — click <i>More info → Run anyway</i>.</p></div>
+        <p>One download, no installs, no Python. Windows and macOS will warn because
+        the app is unsigned — the FAQ below has the one-click fix for each.</p></div>
       <div class="step"><span class="n">2</span>
         <b>Answer the wizard</b>
         <p>Your target roles, seniority, location, a free Gemini key, and your email.
@@ -94,7 +95,7 @@
         <p>Sign in to LinkedIn once, hit Autopilot, and leads start filling your sheet —
         with the best ones landing in your inbox.</p></div>
     </div>
-    <p class="req">Needs: Windows 10/11 · Google Chrome · a LinkedIn account ·
+    <p class="req">Needs: Windows, macOS, or Linux · Google Chrome · a LinkedIn account ·
       a Google account · a free <a href="https://aistudio.google.com/apikey">Gemini API key</a></p>
   </div>
 </section>
@@ -151,6 +152,16 @@
       <p>That's SmartScreen flagging an unsigned app (code-signing certificates cost money —
       this is a free tool). Click <b>More info → Run anyway</b>. Every release is built and
       packaged automatically by GitHub Actions.</p></details>
+    <details><summary>macOS says the app "cannot be verified"</summary>
+      <p>Same story — the app isn't notarized with Apple. Unzip, then
+      <b>right-click (Control-click) JobAgent → Open → Open</b>. On newer macOS you may also
+      need <i>System Settings → Privacy &amp; Security → "Open Anyway"</i> after the first
+      attempt. Run it from Terminal (<code>./JobAgent</code>) — it's a console app. Pick
+      <i>Apple Silicon</i> for M-series Macs, <i>Intel</i> for older ones.</p></details>
+    <details><summary>How do I run it on Linux?</summary>
+      <p>Download, then: <code>tar -xzf JobAgent-linux-x86_64.tar.gz &amp;&amp; ./JobAgent</code>.
+      You need Google Chrome installed (the agent drives your real Chrome). Built on
+      Ubuntu 22.04, so it runs on most current distros.</p></details>
     <details><summary>Is it free?</summary>
       <p>Yes — the app, the Gemini free tier, and Google Sheets all cost nothing for normal
       daily use. If a day's AI quota runs out mid-batch, the agent backs off and finishes on
@@ -198,6 +209,38 @@
       });
       if (list) out.push("</ul>");
       document.getElementById("notes").innerHTML = out.join("");
+
+      // Platform-aware download buttons, driven by which assets actually exist
+      // in the latest release — links never 404, and new platforms appear here
+      // automatically the moment a release ships them.
+      var BASE = "https://github.com/KR-16/jobagent-app/releases/latest/download/";
+      var CATALOG = [
+        { key: "win",   name: "JobAgent.exe",                 label: "Windows" },
+        { key: "mac",   name: "JobAgent-macos-arm64.zip",     label: "macOS (Apple Silicon)" },
+        { key: "mac",   name: "JobAgent-macos-intel.zip",     label: "macOS (Intel)" },
+        { key: "linux", name: "JobAgent-linux-x86_64.tar.gz", label: "Linux" }
+      ];
+      var have = {};
+      (rel.assets || []).forEach(function (a) { have[a.name] = true; });
+      var ua = navigator.userAgent;
+      var plat = /Windows/i.test(ua) ? "win" : /Mac/i.test(ua) ? "mac"
+               : /Linux|X11/i.test(ua) ? "linux" : "win";
+      var main = null;
+      CATALOG.forEach(function (c) { if (!main && c.key === plat && have[c.name]) main = c; });
+      var btn = document.getElementById("mainbtn");
+      if (main) {
+        btn.href = BASE + main.name;
+        btn.innerHTML = "⬇&nbsp; Download for " + main.label;
+      }
+      var altLinks = [];
+      CATALOG.forEach(function (c) {
+        if (have[c.name] && (!main ? c.name !== "JobAgent.exe" : c.name !== main.name)) {
+          altLinks.push('<a href="' + BASE + c.name + '">' + c.label + "</a>");
+        }
+      });
+      if (altLinks.length) {
+        document.getElementById("alts").innerHTML = "Also for: " + altLinks.join(" · ");
+      }
     })
     .catch(function () {});
 })();

@@ -11,6 +11,8 @@ actually apply to — on autopilot.
 
 [![Download for Windows](https://img.shields.io/badge/⬇%20Download%20for%20Windows-JobAgent.exe-0077b5?style=for-the-badge)](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe)
 
+**Also available:** [macOS (Apple Silicon)](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-macos-arm64.zip) · [macOS (Intel)](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-macos-intel.zip) · [Linux](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-linux-x86_64.tar.gz)
+
 [![Latest release](https://img.shields.io/github/v/release/KR-16/jobagent-app?style=flat-square&color=0077b5)](https://github.com/KR-16/jobagent-app/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/KR-16/jobagent-app/total?style=flat-square&color=00a0dc)](https://github.com/KR-16/jobagent-app/releases)
 
@@ -32,8 +34,8 @@ actually apply to — on autopilot.
 
 ## 🚀 Get started (3 steps)
 
-1. **[Download JobAgent.exe](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe)** and double-click it.
-   *Windows SmartScreen will warn because the app is unsigned — click **More info → Run anyway**.*
+1. **[Download for your platform](https://kr-16.github.io/jobagent-app/)** and run it.
+   *Windows and macOS will warn because the app is unsigned — see the [FAQ](#-faq) for the one-click fix on each.*
 2. **Answer the setup wizard** — your name, target roles, seniority, location, a free [Gemini API key](https://aistudio.google.com/apikey), and (optionally) your email for alerts. One Google consent click creates your personal job spreadsheet.
 3. **Pick "Log in to LinkedIn"** (one time), then **"Autopilot"** — and watch leads fill your sheet.
 
@@ -41,12 +43,12 @@ actually apply to — on autopilot.
 
 | | |
 |---|---|
-| 💻 | Windows 10/11 with **Google Chrome** installed |
+| 💻 | Windows, macOS, or Linux with **Google Chrome** installed |
 | 🔗 | A **LinkedIn** account (the agent browses as you, at a human pace) |
 | 📗 | A **Google** account (your spreadsheet lives in *your* Drive) |
 | 🔑 | A free **Gemini API key** — [grab one here](https://aistudio.google.com/apikey) |
 
-*No Python, no installs, no server — one .exe.*
+*No Python, no installs, no server — one download.*
 
 ## 🔒 Your data stays yours
 
@@ -56,6 +58,14 @@ Everything lives in **your** accounts and on **your** machine: the spreadsheet i
 
 <details><summary><b>Windows says "Windows protected your PC"</b></summary>
 That's SmartScreen flagging an unsigned app (code-signing certificates cost money — this is a free tool). Click <b>More info → Run anyway</b>. Every release is built and packaged automatically by GitHub Actions.
+</details>
+
+<details><summary><b>macOS says the app "cannot be verified"</b></summary>
+Same story — the app isn't notarized with Apple. Unzip, then <b>right-click (Control-click) JobAgent → Open → Open</b>. On newer macOS you may also need <i>System Settings → Privacy &amp; Security → "Open Anyway"</i> after the first attempt. Run it from Terminal (<code>./JobAgent</code>) — it's a console app. Pick <i>Apple Silicon</i> for M-series Macs, <i>Intel</i> for older ones.
+</details>
+
+<details><summary><b>How do I run it on Linux?</b></summary>
+Download, then: <code>tar -xzf JobAgent-linux-x86_64.tar.gz && ./JobAgent</code>. You need Google Chrome installed (the agent drives your real Chrome). Built on Ubuntu 22.04, so it runs on most current distros.
 </details>
 
 <details><summary><b>Is it free?</b></summary>
