@@ -156,8 +156,8 @@
       <p>Same story — the app isn't notarized with Apple. Unzip, then
       <b>right-click (Control-click) JobAgent → Open → Open</b>. On newer macOS you may also
       need <i>System Settings → Privacy &amp; Security → "Open Anyway"</i> after the first
-      attempt. Run it from Terminal (<code>./JobAgent</code>) — it's a console app. Pick
-      <i>Apple Silicon</i> for M-series Macs, <i>Intel</i> for older ones.</p></details>
+      attempt. Run it from Terminal (<code>./JobAgent</code>) — it's a console app.
+      Requires an Apple Silicon Mac (M1 or newer, i.e. any Mac from 2020 on).</p></details>
     <details><summary>How do I run it on Linux?</summary>
       <p>Download, then: <code>tar -xzf JobAgent-linux-x86_64.tar.gz &amp;&amp; ./JobAgent</code>.
       You need Google Chrome installed (the agent drives your real Chrome). Built on
@@ -217,7 +217,6 @@
       var CATALOG = [
         { key: "win",   name: "JobAgent.exe",                 label: "Windows" },
         { key: "mac",   name: "JobAgent-macos-arm64.zip",     label: "macOS (Apple Silicon)" },
-        { key: "mac",   name: "JobAgent-macos-intel.zip",     label: "macOS (Intel)" },
         { key: "linux", name: "JobAgent-linux-x86_64.tar.gz", label: "Linux" }
       ];
       var have = {};

@@ -11,7 +11,7 @@ actually apply to — on autopilot.
 
 [![Download for Windows](https://img.shields.io/badge/⬇%20Download%20for%20Windows-JobAgent.exe-0077b5?style=for-the-badge)](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe)
 
-**Also available:** [macOS (Apple Silicon)](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-macos-arm64.zip) · [macOS (Intel)](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-macos-intel.zip) · [Linux](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-linux-x86_64.tar.gz)
+**Also available:** [macOS — Apple Silicon](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-macos-arm64.zip) · [Linux](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-linux-x86_64.tar.gz)
 
 [![Latest release](https://img.shields.io/github/v/release/KR-16/jobagent-app?style=flat-square&color=0077b5)](https://github.com/KR-16/jobagent-app/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/KR-16/jobagent-app/total?style=flat-square&color=00a0dc)](https://github.com/KR-16/jobagent-app/releases)
@@ -61,7 +61,7 @@ That's SmartScreen flagging an unsigned app (code-signing certificates cost mone
 </details>
 
 <details><summary><b>macOS says the app "cannot be verified"</b></summary>
-Same story — the app isn't notarized with Apple. Unzip, then <b>right-click (Control-click) JobAgent → Open → Open</b>. On newer macOS you may also need <i>System Settings → Privacy &amp; Security → "Open Anyway"</i> after the first attempt. Run it from Terminal (<code>./JobAgent</code>) — it's a console app. Pick <i>Apple Silicon</i> for M-series Macs, <i>Intel</i> for older ones.
+Same story — the app isn't notarized with Apple. Unzip, then <b>right-click (Control-click) JobAgent → Open → Open</b>. On newer macOS you may also need <i>System Settings → Privacy &amp; Security → "Open Anyway"</i> after the first attempt. Run it from Terminal (<code>./JobAgent</code>) — it's a console app. Requires an Apple Silicon Mac (M1 or newer, i.e. any Mac from 2020 on).
 </details>
 
 <details><summary><b>How do I run it on Linux?</b></summary>
