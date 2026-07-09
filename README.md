@@ -39,6 +39,8 @@ actually apply to — on autopilot.
 2. **Answer the setup wizard** — your name, target roles, seniority, location, a free [Gemini API key](https://aistudio.google.com/apikey), and (optionally) your email for alerts. One Google consent click creates your personal job spreadsheet.
 3. **Pick "Log in to LinkedIn"** (one time), then **"Autopilot"** — and watch leads fill your sheet.
 
+📖 **New here? The [5-minute Getting Started guide](GETTING_STARTED.md) walks through every step with the exact clicks.**
+
 ### What you need
 
 | | |
