@@ -55,7 +55,9 @@ actually apply to — on autopilot.
 
 ## 🔒 Your data stays yours
 
-Everything lives in **your** accounts and on **your** machine: the spreadsheet is created in your Google Drive (the app can only touch files it created — that's the only permission it asks for), your LinkedIn session and caches stay in the app's folder, and emails are sent from your own Gmail. Nothing is uploaded anywhere else, ever.
+Everything lives in **your** accounts and on **your** machine: the spreadsheet is created in your Google Drive (the app can only touch files it created — that's the only permission it asks for), your LinkedIn session and caches stay in the app's folder, and emails are sent from your own Gmail. **Your job data is never uploaded anywhere else.**
+
+The one optional exception, which you choose: if you tick *"Send anonymous usage stats"*, the app sends one ping a day containing a random id, the app version, and your OS — nothing more. No name, email, keys, or job data. It's off unless you turn it on, and you can turn it off any time in ⚙ Settings.
 
 ## ❓ FAQ
 
