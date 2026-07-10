@@ -29,7 +29,8 @@ actually apply to — on autopilot.
 - 📬 **Finds the apply route** — pulls out application **emails** and **links**, so the best leads are one click from an application
 - 📊 **Your own Google Sheet** — created automatically in *your* Drive on first run, with a live **Dashboard** (charts: leads per day, leads by role) and an **Activity log**
 - 📧 **Email digests** — new actionable leads land in your inbox; nothing is ever sent twice
-- ⚙️ **Setup wizard + settings page** — configure everything in a friendly first-run wizard, edit later in your browser
+- 🖥️ **Runs in your browser** — a local control panel where every action is a button: log in, scrape, categorize, email, start/stop Autopilot, and see live status
+- ⚙️ **Setup wizard + settings page** — configure everything in a friendly first-run wizard, edit anything later
 - 🔁 **Autopilot** — scrape → categorize → email on a ~3-hour cycle with randomized timing
 
 ## 🚀 Get started (3 steps)
@@ -37,7 +38,7 @@ actually apply to — on autopilot.
 1. **[Download for your platform](https://kr-16.github.io/jobagent-app/)** and run it.
    *Windows and macOS will warn because the app is unsigned — see the [FAQ](#-faq) for the one-click fix on each.*
 2. **Answer the setup wizard** — your name, target roles, seniority, location, a free [Gemini API key](https://aistudio.google.com/apikey), and (optionally) your email for alerts. One Google consent click creates your personal job spreadsheet.
-3. **Pick "Log in to LinkedIn"** (one time), then **"Autopilot"** — and watch leads fill your sheet.
+3. The app opens a **control panel in your browser** — click **"Log in to LinkedIn"** once, then **"Start Autopilot"**, and watch leads fill your sheet.
 
 📖 **New here? The [5-minute Getting Started guide](GETTING_STARTED.md) walks through every step with the exact clicks.**
 
@@ -63,7 +64,7 @@ That's SmartScreen flagging an unsigned app (code-signing certificates cost mone
 </details>
 
 <details><summary><b>macOS says the app "cannot be verified"</b></summary>
-Same story — the app isn't notarized with Apple. Unzip, then <b>right-click (Control-click) JobAgent → Open → Open</b>. On newer macOS you may also need <i>System Settings → Privacy &amp; Security → "Open Anyway"</i> after the first attempt. Run it from Terminal (<code>./JobAgent</code>) — it's a console app. Requires an Apple Silicon Mac (M1 or newer, i.e. any Mac from 2020 on).
+Same story — the app isn't notarized with Apple. Unzip, then <b>right-click (Control-click) JobAgent → Open → Open</b>. On newer macOS you may also need <i>System Settings → Privacy &amp; Security → "Open Anyway"</i> after the first attempt. You can also launch it from Terminal (<code>./JobAgent</code>) — either way it opens its control panel in your browser. Requires an Apple Silicon Mac (M1 or newer, i.e. any Mac from 2020 on).
 </details>
 
 <details><summary><b>How do I run it on Linux?</b></summary>
@@ -79,7 +80,7 @@ The agent mimics a human: randomized scroll pauses, gaps between searches, a dai
 </details>
 
 <details><summary><b>Where do I change my roles/email/keys later?</b></summary>
-Menu option <b>8 — Open settings page</b> (or <code>JobAgent.exe ui</code>) opens a local page in your browser. Option <b>7</b> re-runs the wizard. Preference edits never touch your spreadsheet.
+Click <b>⚙ Settings</b> on the control panel — the browser page the app opens (local only, <code>127.0.0.1</code>; nothing is exposed to the network). Preference edits never touch your spreadsheet.
 </details>
 
 <details><summary><b>How do I update?</b></summary>
