@@ -67,7 +67,7 @@
     <p class="tag">Your personal LinkedIn job-hunting agent — it scrapes fresh hiring posts,
     ranks the leads with AI, keeps everything in <b>your own Google Drive</b>, and emails you
     the ones you can actually apply to.</p>
-    <a class="btn" id="mainbtn" href="https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe">
+    <a class="btn" id="mainbtn" href="https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-Setup.exe">
       ⬇&nbsp; Download for Windows</a>
     <div class="meta" id="alts"></div>
     <div class="meta">
@@ -84,8 +84,9 @@
     <div class="steps">
       <div class="step"><span class="n">1</span>
         <b>Download &amp; run</b>
-        <p>One download, no installs, no Python. Windows and macOS will warn because
-        the app is unsigned — the FAQ below has the one-click fix for each.</p></div>
+        <p>An installer on Windows (or a portable file), a single file on Mac/Linux — no
+        Python needed. Windows and macOS warn because the app is unsigned — the FAQ below
+        has the one-click fix for each.</p></div>
       <div class="step"><span class="n">2</span>
         <b>Answer the wizard</b>
         <p>A setup page opens in your browser: target roles, seniority, location, a free
@@ -222,8 +223,12 @@
       // in the latest release — links never 404, and new platforms appear here
       // automatically the moment a release ships them.
       var BASE = "https://github.com/KR-16/jobagent-app/releases/latest/download/";
+      // Order matters: the first entry whose asset exists for the visitor's OS
+      // becomes the big button, so the Windows INSTALLER leads and the portable
+      // .exe shows up as an alternative.
       var CATALOG = [
-        { key: "win",   name: "JobAgent.exe",                 label: "Windows" },
+        { key: "win",   name: "JobAgent-Setup.exe",           label: "Windows (installer)" },
+        { key: "win",   name: "JobAgent.exe",                 label: "Windows (portable, no install)" },
         { key: "mac",   name: "JobAgent-macos-arm64.zip",     label: "macOS (Apple Silicon)" },
         { key: "linux", name: "JobAgent-linux-x86_64.tar.gz", label: "Linux" }
       ];

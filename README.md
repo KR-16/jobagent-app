@@ -9,9 +9,9 @@ actually apply to — on autopilot.
 
 <br>
 
-[![Download for Windows](https://img.shields.io/badge/⬇%20Download%20for%20Windows-JobAgent.exe-0077b5?style=for-the-badge)](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe)
+[![Download for Windows](https://img.shields.io/badge/⬇%20Download%20for%20Windows-Installer-0077b5?style=for-the-badge)](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-Setup.exe)
 
-**Also available:** [macOS — Apple Silicon](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-macos-arm64.zip) · [Linux](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-linux-x86_64.tar.gz)
+**Also available:** [Windows portable (no install)](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe) · [macOS — Apple Silicon](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-macos-arm64.zip) · [Linux](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-linux-x86_64.tar.gz)
 
 [![Latest release](https://img.shields.io/github/v/release/KR-16/jobagent-app?style=flat-square&color=0077b5)](https://github.com/KR-16/jobagent-app/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/KR-16/jobagent-app/total?style=flat-square&color=00a0dc)](https://github.com/KR-16/jobagent-app/releases)
@@ -51,7 +51,7 @@ actually apply to — on autopilot.
 | 📗 | A **Google** account (your spreadsheet lives in *your* Drive) |
 | 🔑 | A free **Gemini API key** — [grab one here](https://aistudio.google.com/apikey) |
 
-*No Python, no installs, no server — one download.*
+*No Python and no server needed — install it on Windows, or run a single portable file.*
 
 ## 🔒 Your data stays yours
 
@@ -93,7 +93,7 @@ Download the latest .exe from the same link — it always serves the newest rele
 
 <div align="center">
 
-**[⬇ Download JobAgent.exe](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent.exe)** — and let the agent hunt while you sleep.
+**[⬇ Download Job Agent](https://github.com/KR-16/jobagent-app/releases/latest/download/JobAgent-Setup.exe)** — and let the agent hunt while you sleep.
 
 Built by [KR-16](https://github.com/KR-16)
 
